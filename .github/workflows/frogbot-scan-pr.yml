@@ -57,6 +57,13 @@ jobs:
           # The GitHub token automatically generated for the job
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JF_WATCHES: amit
+          JFROG_CLI_LOG_LEVEL: DEBUG
+
+
+
+
+
+
 
           # [Optional]
           # If the machine that runs Frogbot has no access to the internat, set the name of a remote repository
