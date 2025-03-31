@@ -24,6 +24,10 @@ jobs:
     # Read more here (Install Frogbot Using GitHub Actions): https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot/setup-frogbot/setup-frogbot-using-github-actions
     environment: frogbot
     steps:
+      - name: Setup Conan
+        run: |
+          python -m pip install conan
+          conan profile detect
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
