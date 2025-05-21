@@ -9,7 +9,6 @@
       includeAllVulnerabilities: true
       pathExclusions:
         - "**/utils*"
-        - "**/bad*"
         - "**/good*"
     jfrogPlatform:
 
