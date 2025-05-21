@@ -12,7 +12,6 @@
           - "*utils*"
           - "*bad*"
           - "*good*"
-          - "**"
     jfrogPlatform:
 
 
