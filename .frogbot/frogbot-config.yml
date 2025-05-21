@@ -12,6 +12,7 @@
       pathExclusions:
         - "**/utils*"
         - "**/good*"
+        - "**/bad*"
     jfrogPlatform:
 
 
