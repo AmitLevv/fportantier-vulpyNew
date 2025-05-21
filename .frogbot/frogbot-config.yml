@@ -7,11 +7,10 @@
         - master
     scan:
       includeAllVulnerabilities: true
-      projects:
-        pathExclusions:
-          - "*utils*"
-          - "*bad*"
-          - "*good*"
+      pathExclusions:
+        - "**/utils*"
+        - "**/bad*"
+        - "**/good*"
     jfrogPlatform:
 
 
