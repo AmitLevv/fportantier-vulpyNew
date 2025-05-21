@@ -6,9 +6,6 @@
       branches:
         - master
     scan:
-      includeAllVulnerabilities: true
-      workingDirs:
-        - "."
       pathExclusions:
         - "**/utils*"
         - "**/good*"
