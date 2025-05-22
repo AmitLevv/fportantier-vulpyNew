@@ -10,7 +10,7 @@
         - "**/utils*"
         - "**/good*"
         - "*bad*"
-    jfrogPlatform:
-
+        - "**/bad*"
+    jfrogPlatform: 
 
 
