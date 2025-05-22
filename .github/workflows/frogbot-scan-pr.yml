@@ -62,6 +62,7 @@ jobs:
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JF_WATCHES: amit
           JFROG_CLI_LOG_LEVEL: DEBUG
+          JF_PATH_EXCLUSIONS: "*bad*" 
 
 
 
