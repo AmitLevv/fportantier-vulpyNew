@@ -51,7 +51,7 @@ jobs:
 
           # [Mandatory if JF_ACCESS_TOKEN is not provided]
           # JFrog username with 'read' permissions for Xray. Must be provided with JF_PASSWORD
-          JF_USER: testamit
+          JF_USER: amittest1
 
           # [Mandatory if JF_ACCESS_TOKEN is not provided]
           # JFrog password. Must be provided with JF_USER
