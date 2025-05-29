@@ -7,9 +7,10 @@
         - master
     scan:
       projects:
-        - prone
-          pathExclusions:
-            - "**/utils*"
-            - "**/good*"
-            - "**/bad*"
+        - prone: # <-- This indicates 'prone' is a mapping/object
+            pathExclusions: # <-- Correctly indented as a child of 'prone'
+              - "**/utils*"
+              - "**/good*"
+              - "**/bad*"
     jfrogPlatform:
+      # ... (add JFrog platform details here, or leave as null/empty object)
