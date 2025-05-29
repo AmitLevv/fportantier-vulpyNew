@@ -6,11 +6,10 @@
       branches:
         - master
     scan:
-      pathExclusions:
-        - "**/utils*"
-        - "**/good*"
-        - "*bad*"
-        - "**/bad*"
-    jfrogPlatform: 
-
-
+      projects:
+        - prone
+          pathExclusions:
+            - "**/utils*"
+            - "**/good*"
+            - "**/bad*"
+    jfrogPlatform:
