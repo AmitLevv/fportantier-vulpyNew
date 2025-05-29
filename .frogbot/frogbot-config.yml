@@ -7,9 +7,9 @@
         - master
     scan:
       projects:
-        - prone
-          pathExclusions:
-            - "**/utils*"
-            - "**/good*"
-            - "**/bad*"
+      - prone
+        pathExclusions:
+        - "**/utils*"
+        - "**/good*"
+        - "**/bad*"
     jfrogPlatform:
