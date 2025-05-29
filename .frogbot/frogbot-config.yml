@@ -11,6 +11,5 @@
             pathExclusions: # <-- Correctly indented as a child of 'prone'
               - "**/utils*"
               - "**/good*"
-              - "**/bad*"
     jfrogPlatform:
       # ... (add JFrog platform details here, or leave as null/empty object)
