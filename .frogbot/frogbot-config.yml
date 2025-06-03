@@ -11,6 +11,5 @@
                 - "**/utils*"
                 - "**/good*"
                 - "**/bad*"
-                - "*bad*"
     jfrogPlatform:
       # ... (add JFrog platform details here, or leave as null/empty object)
