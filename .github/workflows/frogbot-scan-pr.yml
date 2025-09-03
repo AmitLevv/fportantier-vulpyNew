@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 # Frogbot Scan Pull Request does the following:
-# Automatically scans new pull requests for security vulnerabilities.
+# Automatically scans new pull requedsts for security vulnerabilities.
 # Uses JFrog Xray to scan the project.
 # Read more about Frogbot here - https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot
 
@@ -45,10 +45,11 @@ jobs:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: ${{ secrets.JF_URL }}
-
+          JF_USER: testamit
+          JF_PASSWORD: Password1!
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          #JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
           # [Mandatory if JF_ACCESS_TOKEN is not provided]
           # JFrog username with 'read' permissions for Xray. Must be provided with JF_PASSWORD
