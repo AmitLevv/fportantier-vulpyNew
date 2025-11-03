@@ -1,7 +1,7 @@
 Vaulpy - Web Application Security Lab
 ====================================
 
-Vulpy is a web application developed in Python / Flask / SQLite that has two faces.
+Vulpy is a web application developed in Python / Flask / SQLite that has two faces..
 
 **GOOD**: Tries to code with secure development best practices in mind.
 
