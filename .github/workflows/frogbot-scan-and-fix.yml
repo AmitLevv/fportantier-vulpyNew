@@ -22,12 +22,6 @@ jobs:
   create-fix-pull-requests:
     runs-on: self-hosted
     steps:
-      - name: Setup Conan
-        run: |
-          python -m pip install conan
-          conan profile detect
-      - uses: actions/checkout@v4
-
       - uses: jfrog/frogbot@v2  # v2.21.2
         with:
           oidc-provider-name: amitl
