@@ -24,9 +24,6 @@ jobs:
     steps:
       - uses: jfrog/frogbot@v2  # v2.21.2
         env:
-         steps:
-      - uses: jfrog/frogbot@v2
-        env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_GIT_TOKEN: ${{ secrets.JF_GIT_TOKEN }}
