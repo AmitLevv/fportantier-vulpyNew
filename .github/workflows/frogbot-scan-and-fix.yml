@@ -1,30 +1,41 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed dby
-# separate terms of service, privacy policy, and support
-# documentation.
-# Frogbot Scan and Fix does the following:
-# Automatically creates pull requests with fixes for vulnerable project dependencies.
-# Uses JFrog Xray to scan the project.
-# Read more about Frogbot here - https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot
+name: "Frogbot Security Scan"
 
-# Some projects require creating a frogbot-config.yml file. Read more about it here - https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot/setup-frogbot/frogbot-configuration
-
-name: "Frogbot Scan and Fix"
 on:
-  push:
-    branches: [ "master" ]
+  pull_request_target: 
+    types: [opened, synchronize] # Triggers scan-pr flow for every opened/updated pull request
+  push: # Triggers scan-repo flow for every push to the specified branches
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"   # The repository will be scanned once a day at 00:00 GMT.
+  workflow_dispatch: # The repository will be scanned on demand
+
 permissions:
-  id-token: write
-  contents: write
   pull-requests: write
+  contents: write
   security-events: write
+  # [Mandatory If using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
+  # id-token: write
+
 jobs:
-  create-fix-pull-requests:
+  frogbot-scan:
     runs-on: self-hosted
+    strategy:
+      matrix:
+        # The repository scanning will be triggered periodically on the following branches.
+        branch: ["main"]
     steps:
-      - uses: jfrog/frogbot@v2  # v2.21.2
+      - uses: jfrog/frogbot@v2
+        with:
+          version: "2.27.0"
+        # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
+        # Insert to oidc-provider-name the 'Provider Name' defined in the OIDC integration configured in the JPD
+        # with:
+        #   oidc-provider-name: ""
         env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-          JF_GIT_TOKEN: ${{ secrets.JF_GIT_TOKEN }}
-          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
+          JF_GIT_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}    # For repository scan action
+          CI: true
+          JFROG_CLI_LOG_LEVEL: DEBUG
