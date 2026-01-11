@@ -20,7 +20,7 @@ permissions:
   security-events: write
 jobs:
   create-fix-pull-requests:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Setup Conan
         run: |
